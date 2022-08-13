@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag N Drop</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+
+  <body>
+    <div id="drag-n-drop-quiz"></div>
+    <script>
+      let questions = [];
+      questions[0] = [
+        '1. Drag and drop question!',
+        {
+          id: 1,
+          text: 'I',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'am',
+          dragOrder: 3,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'Yassine',
+          dragOrder: 1,
+          dropOrder: 3, // correct order after drop
+        },
+      ];
+      questions[1] = [
+        '2. Drag and drop question!',
+        {
+          id: 1,
+          text: 'You',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'are',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'very',
+          dragOrder: 2,
+          dropOrder: 3, // correct order after drop
+        },
+        {
+          id: 4,
+          text: 'rich',
+          dragOrder: 3,
+          dropOrder: 3, // correct order after drop
+        },
+      ];
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>

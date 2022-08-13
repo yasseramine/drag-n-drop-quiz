@@ -1,0 +1,141 @@
+:root {
+  --q-border-color: rgb(9, 90, 125);
+  --q-border-color-light: rgb(14, 156, 216);
+}
+.drag-n-drop-quiz {
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.drag-n-drop-quiz .question {
+  border-width: 1px;
+  border-style: dotted;
+  border-color: var(--q-border-color);
+
+  margin-bottom: 1rem;
+}
+.drag-n-drop-quiz .question .title {
+  margin: 0.25rem;
+  text-align: center;
+}
+.drag-n-drop-quiz .question .btns {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+}
+.drag-n-drop-quiz .question .btns button {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.drag-n-drop-quiz .question .btns .check-answers {
+  background-color: var(--q-border-color);
+  color: rgb(203, 239, 255);
+  margin-right: 0.75rem;
+  transition: all 300ms ease-in-out;
+}
+.drag-n-drop-quiz .question .btns .check-answers:hover {
+  background-color: var(--q-border-color-light);
+  color: rgb(230, 245, 252);
+}
+/* drags */
+.drag-n-drop-quiz .question .drags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.drag-n-drop-quiz .question .drags .drag {
+  min-width: 100px;
+  min-height: 25px;
+  margin: 0.5rem;
+
+  border-width: 1px;
+  border-style: dashed;
+  border-color: black;
+
+  border-radius: 5px;
+}
+.drag-n-drop-quiz .question .drags .drag .item {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: move;
+
+  user-select: none;
+}
+.drag-n-drop-quiz .question .drags .drag.leaving-drag {
+  background-color: gainsboro;
+  color: grey;
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+}
+.drag-n-drop-quiz .question .drags .drag.entering-drag {
+  background-color: transparent;
+  color: black;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: black;
+}
+.drag-n-drop-quiz .question .drags .drag.dragging {
+  background-color: gainsboro;
+  color: grey;
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+}
+
+/* drops */
+.drag-n-drop-quiz .question .drops {
+  border-top: 1px solid var(--q-border-color);
+  display: flex;
+  flex-wrap: wrap;
+}
+.drag-n-drop-quiz .question .drops .drop {
+  min-width: 100px;
+  min-height: 25px;
+  margin: 0.5rem;
+
+  border-width: 1px;
+  border-style: dashed;
+  border-color: black;
+
+  border-radius: 5px;
+}
+.drag-n-drop-quiz .question .drops .drop .item {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: move;
+
+  user-select: none;
+}
+.drag-n-drop-quiz .question .drops .drop.leaving-drop {
+  border-width: 1px;
+  border-style: dashed;
+  border-color: black;
+}
+.drag-n-drop-quiz .question .drops .drop.entering-drop {
+  border-width: 1.5px;
+  border-color: cornflowerblue;
+}
+.drag-n-drop-quiz .question .drops .drop.dropped {
+  border-width: 1px;
+  border-style: solid;
+  border-color: cornflowerblue;
+}
+.drag-n-drop-quiz .question .drops .drop.correct {
+  border-color: rgb(38, 144, 38);
+  background-color: rgb(131, 228, 131);
+}
+.drag-n-drop-quiz .question .drops .drop.incorrect {
+  border-color: rgb(144, 38, 38);
+  background-color: rgb(228, 131, 131);
+}

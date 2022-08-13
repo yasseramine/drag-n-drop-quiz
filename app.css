@@ -65,7 +65,6 @@
   cursor: move;
 
   user-select: none;
-  touch-action: none;
 }
 .drag-n-drop-quiz .question .drags .drag.leaving-drag {
   background-color: gainsboro;
@@ -117,7 +116,6 @@
   cursor: move;
 
   user-select: none;
-  touch-action: none;
 }
 .drag-n-drop-quiz .question .drops .drop.leaving-drop {
   border-width: 1px;

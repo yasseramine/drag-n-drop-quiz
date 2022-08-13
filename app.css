@@ -24,7 +24,7 @@
 }
 .drag-n-drop-quiz .question .btns button {
   border: none;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 8px;
   cursor: pointer;
 }

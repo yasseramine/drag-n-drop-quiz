@@ -10,6 +10,7 @@ function createElement(tag, className, id) {
 
 // vars
 let draggingItem;
+let questionId;
 
 questions.forEach((question, index) => {
   const QUESTION_ID = `q${index}`;
@@ -74,17 +75,10 @@ questions.forEach((question, index) => {
 // drag n drop functions
 function dragStart(e) {
   // save question id
-  e.dataTransfer.setData('drag-from-question', e.target.id);
+  questionId = e.target.id;
 
   // save dragging item
   draggingItem = e.target;
-
-  // save drag source
-  if (hasClassName(draggingItem.parentNode, 'drag')) {
-    e.dataTransfer.setData('drag-source', 'drag');
-  } else {
-    e.dataTransfer.setData('drag-source', 'drop');
-  }
 
   if (hasClassName(draggingItem.parentNode, 'drag')) {
     draggingItem.parentNode.classList.add('leaving-drag');
@@ -105,7 +99,7 @@ function dragStart(e) {
 
 function dragOver(e) {
   // get question id
-  const DRAG_FROM_QUESTION_ID = e.dataTransfer.getData('drag-from-question');
+  const DRAG_FROM_QUESTION_ID = questionId;
   const DRAG_TO_QUESTION_ID = e.target.parentNode.parentNode.id;
 
   // if the user is trying to move a choice to an external question > exit
@@ -140,6 +134,9 @@ function dragEnd(e) {
   }
 }
 function drop(e) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'copy';
+
   const draggingItemClone = draggingItem.cloneNode(true);
   draggingItemClone.addEventListener('dragstart', dragStart);
   draggingItemClone.addEventListener('dragend', dragEnd);

@@ -1,5 +1,5 @@
 # Shell, I/O Redirections and filters
-## This project was done during *** The Software Engineering *** program at ""ALX".
+## This project was done during ***The Software Engineering*** program at "ALX".
 
 ### What to learn from this project :
 ** Shell, I/O Redirection **
